@@ -17,27 +17,35 @@
 <link rel="apple-touch-icon" type="image/png" sizes="60x60" href="../apple-touch-icon-60x60.png" />
 
 <!-- jquery -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 
 <!-- Bootstrap -->
 <link href="../tidyverse.css" rel="stylesheet">
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script>
+
+<!-- bootstrap-toc -->
+<link rel="stylesheet" href="../bootstrap-toc.css">
+<script src="../bootstrap-toc.js"></script>
 
 <!-- Font Awesome icons -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/all.min.css" integrity="sha256-nAmazAk6vS34Xqo0BSrTb+abbtFlgsFK7NKSi6o7Y78=" crossorigin="anonymous" />
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/v4-shims.min.css" integrity="sha256-6qHlizsOWFskGlwVOKuns+D1nB6ssZrHQrNj1wGplHc=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous" />
 
 <!-- clipboard.js -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" integrity="sha256-FiZwavyI2V6+EXO1U+xzLG3IKldpiTFf3153ea9zikQ=" crossorigin="anonymous"></script>
 
 <!-- headroom.js -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/headroom.min.js" integrity="sha256-DJFC1kqIhelURkuza0AvYal5RxMtpzLjFhsnVIeuk+U=" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script>
 
 <!-- pkgdown -->
 <link href="../pkgdown.css" rel="stylesheet">
 <script src="../pkgdown.js"></script>
 <link href="../tidyverse-2.css" rel="stylesheet">
+
+<!--optional theme-->
+<link href="../.css" rel="stylesheet">
+
 
 
 
@@ -73,7 +81,7 @@ remote_con() give the dplyr source and DBI connection respectively." />
 
   </head>
 
-  <body>
+  <body data-spy="scroll" data-target="#toc">
     <div class="container template-reference-topic">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
@@ -88,9 +96,9 @@ remote_con() give the dplyr source and DBI connection respectively." />
 
       <div class="navbar-brand-container">
         <a class="navbar-brand" href="../index.html">dbplyr</a>
-        <div class="info">
+        <div class="info hidden-xs hidden-sm">
           <span class="partof">part of the <a href="https://tidyverse.org">tidyverse</a></span>
-          <span class="version version-danger" data-toggle="tooltip" data-placement="bottom" title="In-development version">1.4.2.9000</span>
+          <span class="version version-danger" data-toggle="tooltip" data-placement="bottom" title="In-development version">1.99.0.9000</span>
         </div>
       </div>
     </div>
@@ -109,6 +117,9 @@ remote_con() give the dplyr source and DBI connection respectively." />
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="../articles/backend-2.html">dplyr 2.0.0 backend API</a>
+    </li>
     <li>
       <a href="../articles/new-backend.html">Adding a new DBI backend</a>
     </li>
@@ -153,7 +164,7 @@ remote_con() give the dplyr source and DBI connection respectively." />
   </ul>
 </li>
         <li>
-  <a href="https://github.com/tidyverse/dbplyr">
+  <a href="https://github.com/tidyverse/dbplyr/">
     <span class="fab fa fab fa-github fa-lg"></span>
      
   </a>
@@ -183,15 +194,15 @@ the query plan (as computed by the remote database). <code>remote_src()</code> a
 <code>remote_con()</code> give the dplyr source and DBI connection respectively.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>remote_name</span>(<span class='no'>x</span>)
+    <pre class="usage"><span class='fu'>remote_name</span><span class='op'>(</span><span class='va'>x</span><span class='op'>)</span>
 
-<span class='fu'>remote_src</span>(<span class='no'>x</span>)
+<span class='fu'>remote_src</span><span class='op'>(</span><span class='va'>x</span><span class='op'>)</span>
 
-<span class='fu'>remote_con</span>(<span class='no'>x</span>)
+<span class='fu'>remote_con</span><span class='op'>(</span><span class='va'>x</span><span class='op'>)</span>
 
-<span class='fu'>remote_query</span>(<span class='no'>x</span>)
+<span class='fu'>remote_query</span><span class='op'>(</span><span class='va'>x</span><span class='op'>)</span>
 
-<span class='fu'>remote_query_plan</span>(<span class='no'>x</span>)</pre>
+<span class='fu'>remote_query_plan</span><span class='op'>(</span><span class='va'>x</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -208,30 +219,40 @@ the query plan (as computed by the remote database). <code>remote_src()</code> a
 For example, computed queries do not have a "name"</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='no'>mf</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='memdb_frame.html'>memdb_frame</a></span>(<span class='kw'>x</span> <span class='kw'>=</span> <span class='fl'>1</span>:<span class='fl'>5</span>, <span class='kw'>y</span> <span class='kw'>=</span> <span class='fl'>5</span>:<span class='fl'>1</span>, <span class='kw'>.name</span> <span class='kw'>=</span> <span class='st'>"blorp"</span>)
-<span class='fu'>remote_name</span>(<span class='no'>mf</span>)</div><div class='output co'>#&gt; &lt;IDENT&gt; blorp</div><div class='input'><span class='fu'>remote_src</span>(<span class='no'>mf</span>)</div><div class='output co'>#&gt; src:  sqlite 3.29.0 [:memory:]
-#&gt; tbls: blorp, cyl8, dbplyr_001, dbplyr_002, dbplyr_003, dbplyr_004, dbplyr_005,
-#&gt;   mtcars, sqlite_stat1, sqlite_stat4</div><div class='input'><span class='fu'>remote_con</span>(<span class='no'>mf</span>)</div><div class='output co'>#&gt; &lt;SQLiteConnection&gt;
+    <pre class="examples"><div class='input'><span class='va'>mf</span> <span class='op'>&lt;-</span> <span class='fu'><a href='memdb_frame.html'>memdb_frame</a></span><span class='op'>(</span>x <span class='op'>=</span> <span class='fl'>1</span><span class='op'>:</span><span class='fl'>5</span>, y <span class='op'>=</span> <span class='fl'>5</span><span class='op'>:</span><span class='fl'>1</span>, .name <span class='op'>=</span> <span class='st'>"blorp"</span><span class='op'>)</span>
+<span class='fu'>remote_name</span><span class='op'>(</span><span class='va'>mf</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; &lt;IDENT&gt; blorp</div><div class='input'><span class='fu'>remote_src</span><span class='op'>(</span><span class='va'>mf</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; src:  sqlite 3.33.0 [:memory:]
+#&gt; tbls: blorp, dbplyr_001, dbplyr_002, dbplyr_003, dbplyr_004, dbplyr_005,
+#&gt;   dbplyr_006, dbplyr_007, dbplyr_008, dbplyr_009, dbplyr_010, dbplyr_011,
+#&gt;   dbplyr_012, dbplyr_013, dbplyr_014, dbplyr_015, dbplyr_016, df,
+#&gt;   dplyr::band_instruments, dplyr::band_members, mtcars, sqlite_stat1,
+#&gt;   sqlite_stat4</div><div class='input'><span class='fu'>remote_con</span><span class='op'>(</span><span class='va'>mf</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; &lt;SQLiteConnection&gt;
 #&gt;   Path: :memory:
-#&gt;   Extensions: TRUE</div><div class='input'><span class='fu'>remote_query</span>(<span class='no'>mf</span>)</div><div class='output co'>#&gt; &lt;SQL&gt; SELECT *
+#&gt;   Extensions: TRUE</div><div class='input'><span class='fu'>remote_query</span><span class='op'>(</span><span class='va'>mf</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; &lt;SQL&gt; SELECT *
 #&gt; FROM `blorp`</div><div class='input'>
-<span class='no'>mf2</span> <span class='kw'>&lt;-</span> <span class='kw pkg'>dplyr</span><span class='kw ns'>::</span><span class='fu'><a href='https://dplyr.tidyverse.org/reference/filter.html'>filter</a></span>(<span class='no'>mf</span>, <span class='no'>x</span> <span class='kw'>&gt;</span> <span class='fl'>3</span>)
-<span class='fu'>remote_name</span>(<span class='no'>mf2</span>)</div><div class='output co'>#&gt; NULL</div><div class='input'><span class='fu'>remote_src</span>(<span class='no'>mf2</span>)</div><div class='output co'>#&gt; src:  sqlite 3.29.0 [:memory:]
-#&gt; tbls: blorp, cyl8, dbplyr_001, dbplyr_002, dbplyr_003, dbplyr_004, dbplyr_005,
-#&gt;   mtcars, sqlite_stat1, sqlite_stat4</div><div class='input'><span class='fu'>remote_con</span>(<span class='no'>mf2</span>)</div><div class='output co'>#&gt; &lt;SQLiteConnection&gt;
+<span class='va'>mf2</span> <span class='op'>&lt;-</span> <span class='fu'>dplyr</span><span class='fu'>::</span><span class='fu'><a href='https://dplyr.tidyverse.org/reference/filter.html'>filter</a></span><span class='op'>(</span><span class='va'>mf</span>, <span class='va'>x</span> <span class='op'>&gt;</span> <span class='fl'>3</span><span class='op'>)</span>
+<span class='fu'>remote_name</span><span class='op'>(</span><span class='va'>mf2</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; NULL</div><div class='input'><span class='fu'>remote_src</span><span class='op'>(</span><span class='va'>mf2</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; src:  sqlite 3.33.0 [:memory:]
+#&gt; tbls: blorp, dbplyr_001, dbplyr_002, dbplyr_003, dbplyr_004, dbplyr_005,
+#&gt;   dbplyr_006, dbplyr_007, dbplyr_008, dbplyr_009, dbplyr_010, dbplyr_011,
+#&gt;   dbplyr_012, dbplyr_013, dbplyr_014, dbplyr_015, dbplyr_016, df,
+#&gt;   dplyr::band_instruments, dplyr::band_members, mtcars, sqlite_stat1,
+#&gt;   sqlite_stat4</div><div class='input'><span class='fu'>remote_con</span><span class='op'>(</span><span class='va'>mf2</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; &lt;SQLiteConnection&gt;
 #&gt;   Path: :memory:
-#&gt;   Extensions: TRUE</div><div class='input'><span class='fu'>remote_query</span>(<span class='no'>mf2</span>)</div><div class='output co'>#&gt; &lt;SQL&gt; SELECT *
+#&gt;   Extensions: TRUE</div><div class='input'><span class='fu'>remote_query</span><span class='op'>(</span><span class='va'>mf2</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; &lt;SQL&gt; SELECT *
 #&gt; FROM `blorp`
 #&gt; WHERE (`x` &gt; 3.0)</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
-    <h2>Contents</h2>
-    <ul class="nav nav-pills nav-stacked">
-      <li><a href="#arguments">Arguments</a></li>
-      <li><a href="#value">Value</a></li>
-      <li><a href="#examples">Examples</a></li>
-    </ul>
-
+    <nav id="toc" data-toggle="toc" class="sticky-top">
+      <h2 data-toc-skip>Contents</h2>
+    </nav>
   </div>
 </div>
 

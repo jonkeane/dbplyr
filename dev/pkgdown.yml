@@ -1,15 +1,15 @@
-pandoc: '2.2'
-pkgdown: 1.4.1.9000
-pkgdown_sha: 24ef1bbdec0de44fe11eb1d58b40dba961525d43
+pandoc: 2.7.3
+pkgdown: 1.6.1
+pkgdown_sha: ~
 articles:
+  backend-2: backend-2.html
   dbplyr: dbplyr.html
   new-backend: new-backend.html
-  _mysql-setup: notes/_mysql-setup.html
-  _postgres-setup: notes/_postgres-setup.html
   reprex: reprex.html
   sql: sql.html
   translation-function: translation-function.html
   translation-verb: translation-verb.html
+last_built: 2020-10-16T13:56Z
 urls:
   reference: https://dbplyr.tidyverse.org/reference
   article: https://dbplyr.tidyverse.org/articles
